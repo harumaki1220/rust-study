@@ -16,7 +16,17 @@ fn main() {
         let command: &str = input.trim();
 
         if command == "list" {
-            // リスト表示の処理
+            if tasks.is_empty() {
+                println!("タスクはありません。");
+            } else {
+                println!("--- ToDoリスト ---");
+
+                for (i, task) in tasks.iter().enumerate() {
+                    let status = if task.completed { "[x]" } else { "[ ]" };
+                    println!("{}. {} {}", i + 1, status, task.name)
+                }
+                println!("------------------");
+            }
         } else if command.starts_with("add ") {
             if let Some(task_name_str) = command.strip_prefix("add ") {
                 let new_task = Task {
