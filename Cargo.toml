@@ -1,0 +1,21 @@
+[workspace]
+members = [
+    # アプリ
+    "projects/todo_list",
+    "projects/guessing_game",
+    "projects/ferris_test",
+
+    # 文法学習
+    "concepts/hello_world",
+    "concepts/variables",
+    "concepts/data_types",
+    "concepts/functions",
+    "concepts/control_flow",
+    "concepts/loops",
+    "concepts/ownership",
+    "concepts/structs",
+]
+
+# (オプション) ビルドキャッシュ(target)をワークスペースで共有
+[profile.dev]
+opt-level = 0
